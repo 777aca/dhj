@@ -1,0 +1,1148 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0,viewport-fit=cover, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>《代号:界》东方仙诡万法世界</title>
+    <link rel="shortcut icon" href="https://www.worldqi.com/favicon.ico" />
+    <meta
+      name="description"
+      content="【代号界官网】天地有魂、百艺通仙。在这个落笔于晚唐乱世的故事中，神鬼无禁，你将开启一场最为奇幻的玄妙冒险。凡人、妖灵、邪魔……请选择你的身份，穿梭在《代号：界》无限想象的中式幻想世界！《代号：界》游戏下载及游戏预约请认准官方渠道。"
+    />
+    <meta name="keyword" content="代号界,代号界游戏,代号界游戏官网" />
+    <meta name="applicable-device" content="mobile" />
+    <link rel="canonical" href="https://www.worldqi.com" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" href="../file/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../file/css/animate.min.css" />
+    <link rel="stylesheet" href="../file/css/common.css?v=1757058449980" />
+    <link
+      rel="stylesheet"
+      href="../file/css/mobile_index.css?v=1757058449980"
+    />
+    <script type="text/javascript" src="../file/js/lib/jsmpeg.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../file/js/lib/swiper-bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="../file/js/lib/vue.min.js"></script>
+    <script type="text/javascript" src="../file/js/lib/wow.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/tools.js?v=1757058449980"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/config.js?v=1757058449980"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/request.js?v=1757058449980"
+    ></script>
+    <script src="../file/js/common/progress_mob.js?v=1757058449980"></script>
+    <script type="text/javascript" async>
+      function toPage() {
+        let currentVersion = "1757058449980";
+        const query = {};
+        if (!location.search) {
+          location.replace(
+            location.origin + location.pathname + "?" + getQueryStr(query)
+          );
+        } else {
+          location.search
+            .slice(1)
+            .split("&")
+            .forEach((item) => {
+              const kv = item.split("=");
+              query[kv[0]] = kv[1];
+            });
+          if (query.v !== currentVersion) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+          if (Date.now() - +query.time > 10000) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+        }
+        const href = location.href;
+        let os = Tools.backOs();
+        if (window.location.origin.indexOf("test") > -1) {
+          if (!os.isTablet && (os.isAndroid || os.isPhone)) {
+            // if (!href.includes("/m")) {
+            //     location.replace("/m/");
+            // }
+          } else {
+            if (href.includes("/mobile")) {
+              location.replace("/");
+            }
+          }
+        } else {
+          if (!os.isTablet && (os.isAndroid || os.isPhone)) {
+            if (!href.includes("/mobile")) {
+              const searchVal = window.location.search;
+              const urlArr = location.href.split("?")[0].split("/");
+              urlArr.splice(urlArr.length - 1, 0, "mobile");
+              if (!urlArr[urlArr.length - 1].endsWith("index.html")) {
+                urlArr[urlArr.length - 1] = "index.html";
+              } else if (urlArr[urlArr.length - 1] === "") {
+                urlArr.pop(); // 移除空字符串
+                urlArr.push("index.html"); // 添加'index.html'
+              }
+              location.replace(urlArr.join("/") + searchVal);
+            }
+          } else {
+            if (href.includes("/mobile")) {
+              location.replace(location.href.replace("/mobile", ""));
+            }
+          }
+        }
+      }
+
+      toPage();
+
+      function getQueryStr(query) {
+        let newQuery = JSON.parse(JSON.stringify(query));
+        newQuery.v = "1757058449980";
+        newQuery.time = Date.now();
+        let queryStr = "";
+        for (let key in newQuery) {
+          if (!queryStr.length) {
+            queryStr = queryStr + key + "=" + newQuery[key];
+          } else {
+            queryStr = queryStr + "&" + key + "=" + newQuery[key];
+          }
+        }
+        return queryStr;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="jweb" v-cloak>
+      <div class="loading">
+        <div class="loading_img_box">
+          <canvas id="progressCanvas" width="328" height="526"></canvas>
+        </div>
+      </div>
+      <audio :src="bgmLink" loop style="display: none" ref="refAudio"></audio>
+      <div class="swiper" id="mySwiper">
+        <div
+          class="swiper-wrapper"
+          :class="(xcxShow || signPopup||videoPopup)&&'blur'"
+        >
+          <div class="swiper-slide">
+            <div class="home">
+              <div id="homeVideo" class="slide_item_bg"></div>
+              <div class="home_content flex flex-col flex-v-center">
+                <div class="home_content_video">
+                  <img
+                    class="mob_video_btn"
+                    src="../file/img/m/mob_video_btn.webp"
+                    @click="playVideo"
+                  />
+                  <img
+                    class="home_video_title"
+                    src="../file/img/m/mob_home_video_title.webp"
+                    alt="代号界：修仙人自己的中式奇谭"
+                  />
+                  <div class="content_btns flex flex-v-center">
+                    <div class="game_btn flex flex-center" @click="showSign">
+                      <img
+                        src="../file/img/m/title_game.webp"
+                        alt="代号界游戏预约入口"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home_share">
+              <div class="right_share">
+                <div class="tap">
+                  <img
+                    class="share_icon"
+                    src="../file/img/m/tap.png?v=1757058449980"
+                  />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/tap_share.png?v=1757058449980"
+                    alt="代号界游戏官方taptap账号二维码"
+                  />
+                </div>
+                <div class="xhs">
+                  <img
+                    class="share_icon"
+                    src="../file/img/m/xhs.png?v=1757058449980"
+                  />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/xhs_share.png?v=1757058449980"
+                    alt="代号界游戏官方小红书账号二维码"
+                  />
+                </div>
+                <div class="qw">
+                  <img class="share_icon" src="../file/img/m/qw.png" />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/qw_share.png?v=1757058449980"
+                    alt="代号界游戏官方企微账号二维码"
+                  />
+                </div>
+                <div class="bilibili">
+                  <img class="share_icon" src="../file/img/m/bilibili.webp" />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/bilibili_share.png?v=1757058449980"
+                    alt="代号界游戏官方bilibili账号二维码"
+                  />
+                </div>
+                <div class="dy">
+                  <img class="share_icon" src="../file/img/m/dy.webp" />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/dy_share.png?v=1757058449980"
+                    alt="代号界游戏官方抖音账号二维码"
+                  />
+                </div>
+                <div class="weibo">
+                  <img class="share_icon" src="../file/img/m/weibo.webp" />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/weibo_share.png?v=1757058449980"
+                    alt="代号界游戏官方微博账号二维码"
+                  />
+                </div>
+                <div class="weix">
+                  <img class="share_icon" src="../file/img/m/weix.webp" />
+                  <img
+                    class="share_qrcode"
+                    src="../file/img/m/weix_share.png?v=1757058449980"
+                    alt="代号界游戏官方微信公众号二维码"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide_item">
+              <div id="slideVideo2" class="slide_item_bg"></div>
+              <div class="left_bg"></div>
+              <div
+                class="left_text animate__animated animate__fadeInDown_custom"
+              >
+                <img
+                  class="mob_slide_info"
+                  src="../file/img/m/mob_slide_info2.png"
+                  alt
+                />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide_item slide4">
+              <div class="swiper" id="swiper3">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div id="slideVideo3_1" class="slide_item_bg"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div id="slideVideo3_2" class="slide_item_bg"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div id="slideVideo3_3" class="slide_item_bg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper_button-prev"></div>
+              <div class="swiper_button-next"></div>
+              <div class="left_bg"></div>
+              <div
+                class="left_text animate__animated animate__fadeInDown_custom"
+              >
+                <img
+                  class="mob_slide_info"
+                  src="../file/img/m/mob_slide_info3.png"
+                  alt
+                />
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-slide">
+                    <div class="slide_item">
+                        <canvas id="slideVideo4" class="slide_item_bg"></canvas>
+                        <div class="left_bg"></div>
+                        <div class="left_text animate__animated animate__fadeInDown_custom">
+                            <img class="mob_slide_info" src="../file/img/m/mob_slide_info4.webp" alt="" />
+                        </div>
+                    </div>
+                </div> -->
+          <!-- <div class="swiper-slide">
+                    <div class="slide_item">
+                        <img class="slide_item_bg swiper-lazy" src="../file/img/m/slide_item_mob_bg2.webp"
+                            mode="aspectFit" />
+                        <div class="left_bg"></div>
+                        <div class="left_text animate__animated animate__fadeInDown_custom">
+                            <img class="mob_slide_info" src="../file/img/m/mob_slide_info5.webp" alt="" />
+                        </div>
+                    </div>
+                </div> -->
+          <!-- <div class="swiper-slide">
+                    <div class="slide_item">
+                        <img class="slide_item_bg" src="../file/img/m/slide_item_mob_bg5.webp" mode="aspectFit" />
+                        <div class="left_bg"></div>
+                        <div class="left_text animate__animated animate__fadeInDown_custom">
+                            <img class="mob_slide_info" src="../file/img/m/mob_slide_info6.webp" alt="" />
+                        </div>
+                    </div>
+                </div> -->
+          <!-- 千变万化 -->
+          <div class="swiper-slide">
+            <div class="slide_item">
+              <!-- <img class="slide_item_bg" src="../file/img/m/slide_item_mob_bg7.png" mode="aspectFit" /> -->
+              <div id="slideVideo4" class="slide_item_bg"></div>
+              <div class="left_bg"></div>
+              <div
+                class="left_text animate__animated animate__fadeInDown_custom"
+              >
+                <img
+                  class="mob_slide_info"
+                  src="../file/img/m/mob_slide_info7.png"
+                  alt
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 新闻 -->
+          <div class="swiper-slide cmsPage">
+            <div class="slide_item">
+              <div class="swiper news-banner">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      class="swiper-lazy"
+                      src="../file-business/mobile_banner/ZZzZZKrp196386421482940416008b3c.png"
+                      alt="news"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="swiper-lazy"
+                      src="../file-business/mobile_banner/ZZzZZKrp1904818794451308544a4399.jpg"
+                      alt="news"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      class="swiper-lazy"
+                      src="../file-business/mobile_banner/ZZzZZKrp19048188348005130244fbbc.jpg"
+                      alt="news"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-pagination banner_pagination"></div>
+              </div>
+              <div class="cmsbox">
+                <div class="cms-nav">
+                  <a
+                    href="javascript:;"
+                    class="cmsbtn"
+                    :class="{'cur': showCms == 0}"
+                    @click="showCms=0"
+                    title
+                    >最新</a
+                  >
+                  <a
+                    href="javascript:;"
+                    class="cmsbtn"
+                    :class="{'cur': showCms == 1}"
+                    @click="showCms=1"
+                    title
+                    >新闻</a
+                  >
+                  <a
+                    href="javascript:;"
+                    class="cmsbtn"
+                    :class="{'cur': showCms == 2}"
+                    @click="showCms=2"
+                    title
+                    >公告</a
+                  >
+                </div>
+                <div class="cms-group">
+                  <div class="cms-tab" v-if="showCms==0">
+                    <a
+                      href="detail_ZZzZZKrp19635520302493245445a7fc.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        做妖要显贵，上半身基础，下半身就不基础
+                      </div>
+                      <div class="news-time">2025-09-04</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1958465232468840448c2661.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        佳酿还是祭品？他的酒里究竟藏了第几重蛊？
+                      </div>
+                      <div class="news-time">2025-08-21</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1956302469843783680d5db0.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        红白事一条龙？妖鬼花魁共抬棺？圆桌会路透来袭！
+                      </div>
+                      <div class="news-time">2025-08-15</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp195630099026110464025cef.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">诡市必吃榜：秋天的第一只九尾狐</div>
+                      <div class="news-time">2025-08-15</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp19508735077390786560459a.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">路遇黑皮水妖，拼尽全力无法战胜</div>
+                      <div class="news-time">2025-07-31</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp194611360192017612825c06.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        太好了是海龟汤！猜猜看：灯影长明，油从何来？
+                      </div>
+                      <div class="news-time">2025-07-18</div>
+                    </a>
+                  </div>
+                  <div class="cms-tab" v-if="showCms==1">
+                    <a
+                      href="detail_ZZzZZKrp1956302469843783680d5db0.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        红白事一条龙？妖鬼花魁共抬棺？圆桌会路透来袭！
+                      </div>
+                      <div class="news-time">2025-08-15</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp19218568094135132165d7f9.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        屠龙少年终成恶龙！炼魂化形之术一般人我不告诉……
+                      </div>
+                      <div class="news-time">2025-05-12</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1921167716643901440ae3fc.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        痛了，穿了，没命了，忘情了！逃进妖界秘境的我意外结丹
+                      </div>
+                      <div class="news-time">2025-05-10</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp191963438424850841601555.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        战斗答疑｜风雷鼓舞，是代号界的斗法华章
+                      </div>
+                      <div class="news-time">2025-05-06</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1919647828842516480d8114.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        怪美的！角色设计大公开：披毛带角亦可修仙！
+                      </div>
+                      <div class="news-time">2025-04-14</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp191966988747997593666278.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="新闻">新闻</div>
+                      <div class="news-dec">
+                        奇幻时刻！欢迎来到我们的叱罗诡市
+                      </div>
+                      <div class="news-time">2025-04-10</div>
+                    </a>
+                  </div>
+                  <div class="cms-tab" v-if="showCms==2">
+                    <a
+                      href="detail_ZZzZZKrp19635520302493245445a7fc.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        做妖要显贵，上半身基础，下半身就不基础
+                      </div>
+                      <div class="news-time">2025-09-04</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1958465232468840448c2661.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        佳酿还是祭品？他的酒里究竟藏了第几重蛊？
+                      </div>
+                      <div class="news-time">2025-08-21</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp195630099026110464025cef.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">诡市必吃榜：秋天的第一只九尾狐</div>
+                      <div class="news-time">2025-08-15</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp19508735077390786560459a.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">路遇黑皮水妖，拼尽全力无法战胜</div>
+                      <div class="news-time">2025-07-31</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp194611360192017612825c06.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        太好了是海龟汤！猜猜看：灯影长明，油从何来？
+                      </div>
+                      <div class="news-time">2025-07-18</div>
+                    </a>
+                    <a
+                      href="detail_ZZzZZKrp1944707508035784704f4628.html"
+                      class="item"
+                      title
+                    >
+                      <div class="news-type" data-type="公告">公告</div>
+                      <div class="news-dec">
+                        出发！带着我新写的故事——全新妖怪档案揭晓
+                      </div>
+                      <div class="news-time">2025-07-14</div>
+                    </a>
+                  </div>
+
+                  <a
+                    :href="showCms === 0 ? 'dhjList.html' : showCms === 1 ? 'dhjNewsList.html' : 'dhjAnnList.html'"
+                    class="news_getmore"
+                    title
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 视听中心 + 底部版权 -->
+          <div class="swiper-slide">
+            <div class="swiper slide6_scroll">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide_item mediaPage">
+                    <div
+                      class="media_item"
+                      @click="showModel('ZZzZZKrp184645371809091174417a8e')"
+                    >
+                      <div class="media_tit">
+                        <div class="bigtxt">游戏截图</div>
+                        <div class="endec">Screenshots</div>
+                      </div>
+                      <div class="modelbox">
+                        <img
+                          src="../file-business/type_img_m/ZZzZZKrp19050806257617510401b869.jpg"
+                          alt
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="media_item"
+                      @click="showModel('ZZzZZKrp1846453823158226944e4584')"
+                    >
+                      <div class="media_tit">
+                        <div class="bigtxt">游戏视频</div>
+                        <div class="endec">Game Videos</div>
+                      </div>
+                      <div class="modelbox">
+                        <img
+                          src="../file-business/type_img_m/ZZzZZKrp184645406326115942426250.png"
+                          alt
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="media_item"
+                      @click="showModel('ZZzZZKrp184645407903593676800cea')"
+                    >
+                      <div class="media_tit">
+                        <div class="bigtxt">游戏图片</div>
+                        <div class="endec">Wallpaper images</div>
+                      </div>
+                      <div class="modelbox">
+                        <img
+                          src="../file-business/type_img_m/ZZzZZKrp18587636051855319049a459.png"
+                          alt
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide footer-slide">
+            <div class="footer">
+              <img
+                class="footer_logo"
+                src="../file/img/m/home_logo.webp"
+                alt="代号界，中式奇谭修仙游戏，带你体验东方仙诡万法世界"
+              />
+              <div class="footer_info">
+                <p class="footer_text footer_text_tip">
+                  <a href="/mobile"> 代号界 </a>
+                </p>
+                <p class="footer_text footer_text_tip">
+                  本站是代号界游戏官网，游戏下载及游戏预约请认准官方渠道。
+                </p>
+                <p class="footer_text">
+                  抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。
+                </p>
+                <p class="footer_text">
+                  适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+                </p>
+                <p class="footer_text">
+                  <a href="https://beian.miit.gov.cn" target="_blank">
+                    沪ICP备2024104032号-2
+                  </a>
+                </p>
+                <div class="flex flex-center">
+                  <img
+                    style="width: 0.2rem; margin-right: 0.1rem"
+                    src="../file/img/m/police_icon.webp"
+                    alt
+                  />
+                  <p class="footer_text">
+                    <a
+                      href="https://beian.mps.gov.cn/#/query/webSearch?code=31010402334723"
+                      rel="noreferrer"
+                      target="_blank"
+                      >沪公网安备31010402334723号</a
+                    >
+                  </p>
+                </div>
+                <p class="footer_text">
+                  联系地址：上海市徐汇区苍梧路12号5层506室 丨 联系方式：<a
+                    href="mailto:worldqii@163.com"
+                    >worldqii@163.com</a
+                  >
+                </p>
+                <p class="footer_text">
+                  Copyright © 2024|上海拾异信息科技有限责任公司. All Rights
+                  Reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_logo" v-if="pageNavIndex < 4">
+          <h1>
+            <img
+              class="right_logo_img"
+              src="../file/img/m/home_logo.webp"
+              alt="代号界，中式奇谭修仙游戏，带你体验东方仙诡万法世界"
+            />
+          </h1>
+        </div>
+        <div class="pagin_fold">
+          <div class="fold_box" @click="isFold=!isFold">
+            <img
+              v-if="isFold"
+              class="menu_icon"
+              src="../file/img/m/menu.webp"
+            />
+            <img v-else class="close_icon" src="../file/img/m/close.webp" />
+          </div>
+          <a
+            href="javascript:;"
+            class="bgmbtn"
+            :class="{'play' : bgmStatus}"
+            title=""
+            @click="bgmplay"
+          ></a>
+        </div>
+        <div class="pagin_change_top" :class="!isFold&&'pagin_change_flex'">
+          <div class="pagin_box">
+            <div
+              class="pagin_item"
+              v-for="(item,index) in pageList"
+              :class="{'cur': pageNavIndex == index}"
+              @click="changeSwiper(index)"
+            >
+              <p>{{ item }}</p>
+              <img class="hudie_gif" src="../file/img/m/hudie_gif.gif" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 小程序预约 -->
+      <div class="popup flex flex-center" v-if="xcxShow">
+        <div class="xcxorderpop">
+          <img
+            class="popup_close"
+            @click.self="xcxShow = !xcxShow"
+            src="../file/img/m/close.webp"
+            alt="关闭"
+          />
+          <img class="popicon" src="../file/img/m/dialog_logo.webp" />
+          <div class="qdgroup">
+            <a
+              href="javascript:;"
+              class="qdbtn"
+              :class="{'cur' : device_type == 'Android'}"
+              @click="changeType('Android')"
+              title="Android"
+              ><span>Android</span></a
+            >
+            <a
+              href="javascript:;"
+              class="qdbtn"
+              :class="{'cur' : device_type == 'IOS'}"
+              @click="changeType('IOS')"
+              title="iOS"
+              ><i></i><span>iOS</span><i></i
+            ></a>
+            <a
+              href="javascript:;"
+              class="qdbtn"
+              :class="{'cur' : device_type == 'PC'}"
+              @click="changeType('PC')"
+              title="PC"
+              ><span>PC</span></a
+            >
+          </div>
+          <a
+            v-if="device_type == 'Android'"
+            href="https://a.greentool.net/activityMini/?appid=wx6459b2fb844764d9&isauth=0&type=gameReserve&key=oMGWBON7&linkSource=AZ"
+            class="order2btn"
+            title="小程序预约"
+          ></a>
+          <a
+            v-else-if="device_type == 'IOS'"
+            href="https://a.greentool.net/activityMini/?appid=wx6459b2fb844764d9&isauth=0&type=gameReserve&key=oMGWBON7&linkSource=IOS"
+            class="order2btn"
+            title="小程序预约"
+          ></a>
+          <a
+            v-else-if="device_type == 'PC'"
+            href="https://a.greentool.net/activityMini/?appid=wx6459b2fb844764d9&isauth=0&type=gameReserve&key=oMGWBON7&linkSource=PC"
+            class="order2btn"
+            title="小程序预约"
+          ></a>
+          <a
+            href="javascript:;"
+            class="order1btn"
+            @click="(xcxShow = !xcxShow, signPopup = !signPopup)"
+            title="短信预约"
+            >使用验证码预约</a
+          >
+        </div>
+      </div>
+      <div class="popup flex flex-center" v-if="signPopup">
+        <img class="popup_left_img" src="../file/img/m/dialog_bg1.webp" />
+        <div class="sign_up_popup flex flex-col flex-v-center">
+          <img
+            class="popup_close"
+            @click.self="hideSign"
+            src="../file/img/m/close.webp"
+            alt="关闭"
+          />
+          <div class="popup_top">
+            <img src="../file/img/m/dialog_logo.webp" />
+            <div class="popup_top_text">
+              <img
+                class="sign_top_title1"
+                v-if="!requestYes"
+                src="../file/img/m/mob_follow_tip.webp"
+              />
+              <img
+                v-else
+                class="sign_top_title2"
+                src="../file/img/m/mob_success.webp"
+              />
+            </div>
+          </div>
+          <div v-if="!requestYes" class="popup_type flex flex-v-center">
+            <div
+              @click="changeType('Android')"
+              :class="device_type=='Android'&&'type_active'"
+            >
+              Android
+            </div>
+            <img src="../file/img/m/type_divider.webp" />
+            <div
+              @click="changeType('IOS')"
+              :class="device_type=='IOS'&&'type_active'"
+            >
+              iOS
+            </div>
+            <img src="../file/img/m/type_divider.webp" />
+            <div
+              @click="changeType('PC')"
+              :class="device_type=='PC'&&'type_active'"
+            >
+              PC
+            </div>
+          </div>
+          <div v-if="!requestYes" class="popup_input_box">
+            <div class="popup_item">
+              <input
+                class="popup_input"
+                type="text"
+                v-model="form.phone"
+                maxlength="11"
+                placeholder="请输入手机号码"
+                @input="phoneInput"
+              />
+            </div>
+            <div class="popup_item">
+              <input
+                class="popup_input"
+                type="text"
+                v-model="form.code"
+                placeholder="请输入验证码"
+                maxlength="6"
+                @input="codeInput"
+              />
+              <div
+                class="item_button"
+                @click.prevent="getSmsCode"
+                :class="!countdown&&'hover_sms'"
+              >
+                {{ countdown > 0 && 60 >= countdown ? ('已发送(' + countdown +
+                's)') : '获取验证码' }}
+              </div>
+            </div>
+            <div
+              class="form_submit"
+              :class="yesSubmit&&'active_form'"
+              @click="submitForm"
+            >
+              <img src="../file/img/m/title_game.webp" />
+            </div>
+            <div class="form_checkbox">
+              <input
+                class="check_item"
+                type="checkbox"
+                id="checked"
+                v-model="checked"
+                @change="changeForm"
+              />
+              <label for="checked" class="form_checkbox_text">
+                我已详细阅读并同意
+                <a
+                  href="https://www.worldqi.com/privacy?content=user_clause"
+                  target="_blank"
+                  >《用户协议》
+                </a>
+                和
+                <a
+                  href="https://www.worldqi.com/privacy?content=member_role"
+                  target="_blank"
+                >
+                  《隐私政策》
+                </a>
+              </label>
+            </div>
+          </div>
+          <div v-if="requestYes" class="success_box">
+            <img class="qrcode" src="../file/img/m/qrcode.webp" />
+            <img
+              class="success_tip"
+              src="../file/img/m/mob_success_tip.webp"
+              alt
+            />
+          </div>
+        </div>
+      </div>
+      <div class="tipPopup" v-if="showTips">
+        <p>{{ alerttips }}</p>
+      </div>
+      <div class="popup flex flex-center" v-if="videoPopup">
+        <div class="video_popup">
+          <img
+            class="popup_close"
+            @click.self="videoPopup=false"
+            src="../file/img/m/close.webp"
+            alt="关闭"
+          />
+          <video
+            playsinline
+            webkit-playsinline
+            x5-playsinline="true"
+            class="video_player"
+            controls
+            preload="none"
+            muted
+            src="../file/img/pc/video/page-home.mp4"
+          ></video>
+        </div>
+      </div>
+      <div v-if="landscapePopup" class="landscape_popup flex flex-center">
+        <p>{{ tips }}</p>
+      </div>
+      <!-- 视听弹窗 -->
+      <div
+        class="media_pop"
+        id="mybox"
+        v-if="showMediaPop"
+        :class="showMediaVideo &&'blur'"
+      >
+        <a
+          href="javascript:;"
+          class="close_media"
+          @click="showMediaPop = !showMediaPop"
+          title="返回"
+          ><i></i>返回</a
+        >
+        <div class="popcont">
+          <div
+            class="tab"
+            v-if="showType === 'ZZzZZKrp184645371809091174417a8e'"
+          >
+            <div class="bigImg tp">
+              <img
+                :src="shitingData[showType][mediaBigImgIndex].img1"
+                alt
+                @click="showBigImg"
+              />
+            </div>
+            <div class="swiper big_Imgsw">
+              <div class="swiper-wrapper">
+                <div
+                  v-for="(item,index) in shitingData[showType]"
+                  class="swiper-slide"
+                  :key="index"
+                >
+                  <img :src="item.img" />
+                  <div class="txt">{{ item.name }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev big_ImgNext"></div>
+            <div class="swiper-button-next big_ImgPrev"></div>
+          </div>
+          <div
+            class="tab"
+            v-if="showType === 'ZZzZZKrp1846453823158226944e4584'"
+          >
+            <div class="bigImg">
+              <img :src="shitingData[showType][mediaBigImgIndex].img" alt />
+              <a
+                href="javascript:;"
+                class="playvideo"
+                @click="showVideoFunc"
+              ></a>
+            </div>
+            <div class="swiper big_sw videoModel">
+              <div class="swiper-wrapper">
+                <div
+                  v-for="(item,index) in shitingData[showType]"
+                  class="swiper-slide"
+                  :key="index"
+                >
+                  <img :src="item.img" />
+                  <div class="txt">{{ item.name }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev big_ImgNext"></div>
+            <div class="swiper-button-next big_ImgPrev"></div>
+          </div>
+          <div
+            class="tab"
+            v-if="showType === 'ZZzZZKrp184645407903593676800cea'"
+          >
+            <div class="bigImg tp">
+              <img
+                :src="shitingData[showType][mediaBigImgIndex].img1"
+                alt
+                @click="showBigImg"
+              />
+            </div>
+            <div class="swiper big_Imgsw">
+              <div class="swiper-wrapper">
+                <div
+                  v-for="(item,index) in shitingData[showType]"
+                  class="swiper-slide"
+                  :key="index"
+                >
+                  <img :src="item.img" />
+                  <div class="txt">{{ item.name }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev big_ImgNext"></div>
+            <div class="swiper-button-next big_ImgPrev"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 视听查看弹窗 -->
+      <div class="media-pop" v-show="showMediaVideo">
+        <div class="media-box">
+          <a
+            href="javascript:;"
+            class="close"
+            @click="hideFunc"
+            title="关闭"
+          ></a>
+          <div
+            class="media-cont"
+            :class="isImg && 'imgbox'"
+            id="mediaPop"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <script async>
+      new WOW().init();
+    </script>
+    <script type="text/javascript">
+      var yxjtData = [
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp190482441866484531219783.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp1904824428932501504723a9.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp19048244377237626882ca28.jpg",
+        },
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp1904824520041172992bfe32.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp19048245274986455041e12f.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp19048245345618534400e1a3.jpg",
+        },
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp1904824587334586368e0624.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp19048245934918246401c3b5.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp19048246000055787520319e.jpg",
+        },
+      ];
+      var yxspData = [
+        {
+          name: "孟婆引路，寻妖见鬼",
+          img: "../file-business/img_pc/ZZzZZKrp1907702854752276480e0627.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp19077029045176934404a800.jpg",
+          mp4: "../file-business/audio/ZZzZZKrp1907676349104001024dcb30.mp4",
+        },
+        {
+          name: "百鬼开道，实机首曝",
+          img: "../file-business/img_pc/ZZzZZKrp1846457498639405056e5ba5.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp184645749071636480076c15.jpg",
+          mp4: "../file-business/audio/ZZzZZKrp1846461424105295872a0de5.mp4",
+        },
+        {
+          name: "三鸡谋定，首测先导",
+          img: "../file-business/img_pc/ZZzZZKrp190740342112898662435882.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp1907403429949607936bc980.jpg",
+          mp4: "../file-business/audio/ZZzZZKrp190740362364676096037874.mp4",
+        },
+      ];
+      var yxtpData = [
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp1904827132786380800db264.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp1875111358211690496b52f6.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp190482714028160204858e57.jpg",
+        },
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp1904826844193099776e0a8d.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp1904826856100728832077fa.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp1904826866133504000fc7ad.jpg",
+        },
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp187511146474281779208680.jpg",
+          img1: "../file-business/img_m/ZZzZZKrp1875111471541784576d667f.jpg",
+          download:
+            "../file-business/img_download/ZZzZZKrp18751114810251059200381f.jpg",
+        },
+        {
+          name: "",
+          img: "../file-business/img_pc/ZZzZZKrp1963871415002337280b6dcc.png",
+          img1: "../file-business/img_m/ZZzZZKrp196387144213109555275c5b.png",
+          download:
+            "../file-business/img_download/ZZzZZKrp1963871423781015552dee55.png",
+        },
+      ];
+      var shitingData = {
+        ZZzZZKrp1846453823158226944e4584: yxspData,
+        ZZzZZKrp184645407903593676800cea: yxtpData,
+        ZZzZZKrp184645371809091174417a8e: yxjtData,
+      };
+    </script>
+    <script src="../file/js/app/data.js?v=1757058449980"></script>
+    <script src="../file/js/app/index_mob.js?v=1757058449980"></script>
+  </body>
+</html>
