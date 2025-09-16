@@ -1,0 +1,390 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0,viewport-fit=cover, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>《代号:界》东方仙诡万法世界</title>
+    <link rel="shortcut icon" href="https://www.worldqi.com/favicon.ico" />
+    <meta
+      name="description"
+      content="【代号界官网】天地有魂、百艺通仙。在这个落笔于晚唐乱世的故事中，神鬼无禁，你将开启一场最为奇幻的玄妙冒险。凡人、妖灵、邪魔……请选择你的身份，穿梭在《代号：界》无限想象的中式幻想世界！《代号：界》游戏下载及游戏预约请认准官方渠道。"
+    />
+    <meta name="keyword" content="代号界,代号界游戏,代号界游戏官网" />
+    <meta name="applicable-device" content="mobile" />
+    <link rel="canonical" href="https://www.worldqi.com" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link
+      rel="stylesheet"
+      href="../file/css/swiper-bundle.min.css?v=1757058453477"
+    />
+    <link rel="stylesheet" href="../file/css/animate.min.css?v=1757058453477" />
+    <link rel="stylesheet" href="../file/css/common.css?v=1757058453477" />
+    <link
+      rel="stylesheet"
+      href="../file/css/mobile_index.css?v=1757058453477"
+    />
+    <script type="text/javascript" src="../file/js/lib/jsmpeg.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../file/js/lib/swiper-bundle.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/lib/vue.min.js?v=1757058453477"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/lib/wow.min.js?v=1757058453477"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/tools.js?v=1757058453477"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/config.js?v=1757058453477"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../file/js/common/request.js?v=1757058453477"
+    ></script>
+    <script src="../file/js/common/progress_mob.js"></script>
+    <script type="text/javascript" async>
+      function toPage() {
+        let currentVersion = "1757058453477";
+        const query = {};
+        if (!location.search) {
+          location.replace(
+            location.origin + location.pathname + "?" + getQueryStr(query)
+          );
+        } else {
+          location.search
+            .slice(1)
+            .split("&")
+            .forEach((item) => {
+              const kv = item.split("=");
+              query[kv[0]] = kv[1];
+            });
+          if (query.v !== currentVersion) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+          if (Date.now() - +query.time > 1000) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+        }
+        const href = location.href;
+        let os = Tools.backOs();
+        if (window.location.origin.indexOf("test") > -1) {
+          if (!os.isTablet && (os.isAndroid || os.isPhone)) {
+            // if (!href.includes("/m")) {
+            //     location.replace("/m/");
+            // }
+          } else {
+            if (href.includes("/mobile")) {
+              location.replace("/");
+            }
+          }
+        } else {
+          if (!os.isTablet && (os.isAndroid || os.isPhone)) {
+            if (!href.includes("/mobile")) {
+              const searchVal = window.location.search;
+              const urlArr = location.href.split("?")[0].split("/");
+              urlArr.splice(urlArr.length - 1, 0, "mobile");
+              if (!urlArr[urlArr.length - 1].endsWith("index.html")) {
+                urlArr[urlArr.length - 1] = "index.html";
+              } else if (urlArr[urlArr.length - 1] === "") {
+                urlArr.pop(); // 移除空字符串
+                urlArr.push("index.html"); // 添加'index.html'
+              }
+              location.replace(urlArr.join("/") + searchVal);
+            }
+          } else {
+            if (href.includes("/mobile")) {
+              location.replace(location.href.replace("/mobile", ""));
+            }
+          }
+        }
+      }
+
+      toPage();
+
+      window.onresize = () => {
+        toPage();
+      };
+      function getQueryStr(query) {
+        let newQuery = JSON.parse(JSON.stringify(query));
+        newQuery.v = "1757058453477";
+        newQuery.time = Date.now();
+        let queryStr = "";
+        for (let key in newQuery) {
+          if (!queryStr.length) {
+            queryStr = queryStr + key + "=" + newQuery[key];
+          } else {
+            queryStr = queryStr + "&" + key + "=" + newQuery[key];
+          }
+        }
+        return queryStr;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="jweb" v-cloak>
+        <div class="listPage">
+          <a href="index.html" class="returnIndex topbtn" title="返回"
+            ><i></i> 返回</a
+          >
+
+          <div class="listcont">
+            <div class="listnav">
+              <a href="dhjList.html" class="listbtn">最新</a>
+              <a href="javascript:;" class="listbtn cur">新闻</a>
+              <a href="dhjAnnList.html" class="listbtn">公告</a>
+            </div>
+            <div class="listbox">
+              <a
+                href="detail_ZZzZZKrp1956302469843783680d5db0.html"
+                class="item"
+                v-if="0 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">
+                      红白事一条龙？妖鬼花魁共抬棺？圆桌会路透来袭！
+                    </div>
+                  </div>
+                  <div class="time">2025.08.15</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp1956302977480396800f794f.png"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp19218568094135132165d7f9.html"
+                class="item"
+                v-if="1 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">
+                      屠龙少年终成恶龙！炼魂化形之术一般人我不告诉……
+                    </div>
+                  </div>
+                  <div class="time">2025.05.12</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp1921858775304769536a1f69.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp1921167716643901440ae3fc.html"
+                class="item"
+                v-if="2 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">
+                      痛了，穿了，没命了，忘情了！逃进妖界秘境的我意外结丹
+                    </div>
+                  </div>
+                  <div class="time">2025.05.10</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp19211697498789027842161b.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp191963438424850841601555.html"
+                class="item"
+                v-if="3 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">
+                      战斗答疑｜风雷鼓舞，是代号界的斗法华章
+                    </div>
+                  </div>
+                  <div class="time">2025.05.06</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp191964629701558681619679.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp1919647828842516480d8114.html"
+                class="item"
+                v-if="4 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">
+                      怪美的！角色设计大公开：披毛带角亦可修仙！
+                    </div>
+                  </div>
+                  <div class="time">2025.04.14</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp1919652192697061376786b8.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp191966988747997593666278.html"
+                class="item"
+                v-if="5 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">奇幻时刻！欢迎来到我们的叱罗诡市</div>
+                  </div>
+                  <div class="time">2025.04.10</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp1919672219190038528f8d19.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp19077691160313241605c6f7.html"
+                class="item"
+                v-if="6 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">代号界首测启动：奇幻精神，星火燎原</div>
+                  </div>
+                  <div class="time">2025.04.03</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp190777011727879782424920.jpg"
+                    alt
+                  />
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp190480793585543168058617.html"
+                class="item"
+                v-if="7 < pageSize * pageNum"
+              >
+                <div class="infobox">
+                  <div class="row">
+                    <div class="type" data-type="新闻">新闻</div>
+                    <div class="dec">新年快乐！代号界研发近况同步</div>
+                  </div>
+                  <div class="time">2024.12.31</div>
+                </div>
+                <div class="imgbox">
+                  <img
+                    src="../file-business/mobile_thumbnail/ZZzZZKrp1904811258453037056d1d7c.png"
+                    alt
+                  />
+                </div>
+              </a>
+            </div>
+            <a
+              href="javascript:;"
+              class="getmore"
+              v-if="8 > pageSize * pageNum"
+              title
+              @click="cutPage"
+            ></a>
+          </div>
+        </div>
+        <div v-if="landscapePopup" class="landscape_popup flex flex-center">
+          <p>{{ tips }}</p>
+        </div>
+      </div>
+      <div class="footer">
+        <img
+          class="footer_logo"
+          src="../file/img/m/home_logo.webp"
+          alt="代号界，中式奇谭修仙游戏，带你体验东方仙诡万法世界"
+        />
+        <div class="footer_info">
+          <p class="footer_text footer_text_tip">
+            <a href="https://www.worldqi.com/m/"> 代号界 </a>
+          </p>
+          <p class="footer_text footer_text_tip">
+            本站是代号界游戏官网，游戏下载及游戏预约请认准官方渠道。
+          </p>
+          <p class="footer_text">
+            抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。
+          </p>
+          <p class="footer_text">
+            适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+          </p>
+          <p class="footer_text">
+            <a href="https://beian.miit.gov.cn" target="_blank">
+              沪ICP备2024104032号-2
+            </a>
+          </p>
+          <div class="flex flex-center">
+            <img
+              style="width: 0.2rem; margin-right: 0.1rem"
+              src="../file/img/m/police_icon.webp"
+              alt
+            />
+            <p class="footer_text">
+              <a
+                href="https://beian.mps.gov.cn/#/query/webSearch?code=31010402334723"
+                rel="noreferrer"
+                target="_blank"
+                >沪公网安备31010402334723号</a
+              >
+            </p>
+          </div>
+          <p class="footer_text">
+            联系地址：上海市徐汇区苍梧路12号5层506室 丨 联系方式：<a
+              href="mailto:worldqii@163.com"
+              >worldqii@163.com</a
+            >
+          </p>
+          <p class="footer_text">
+            Copyright © 2024|上海拾异信息科技有限责任公司. All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="../file/js/app/news-m.js"></script>
+  </body>
+</html>

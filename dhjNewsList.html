@@ -1,0 +1,432 @@
+<html lang="en" class="newsList">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0,viewport-fit=cover, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>《代号:界》东方仙诡万法世界</title>
+    <link rel="shortcut icon" href="https://www.worldqi.com/favicon.ico" />
+    <meta
+      name="description"
+      content="【代号界官网】天地有魂、百艺通仙。在这个落笔于晚唐乱世的故事中，神鬼无禁，你将开启一场最为奇幻的玄妙冒险。凡人、妖灵、邪魔……请选择你的身份，穿梭在《代号：界》无限想象的中式幻想世界！《代号：界》游戏下载及游戏预约请认准官方渠道。"
+    />
+    <meta name="keyword" content="代号界,代号界游戏,代号界游戏官网" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device" content="pc" />
+    <meta
+      name="mobile-agent"
+      content="format=html5;url=https://www.worldqi.com/m"
+    />
+    <link
+      rel="alternate"
+      media="only screen and (max-width: 640px)"
+      href="https://www.worldqi.com/m/"
+    />
+    <link rel="canonical" href="https://www.worldqi.com" />
+    <link rel="stylesheet" href="../file/css/animate.min.css" />
+    <link rel="stylesheet" href="../file/css/common.css" />
+    <link rel="stylesheet" href="../file/css/news-pc.css" />
+    <script type="text/javascript" src="../file/js/common/tools.js"></script>
+    <script type="text/javascript" async>
+      !(function () {
+        let currentVersion = "1757058432382";
+        const query = {};
+        if (!location.search) {
+          location.replace(
+            location.origin + location.pathname + "?" + getQueryStr(query)
+          );
+        } else {
+          location.search
+            .slice(1)
+            .split("&")
+            .forEach((item) => {
+              const kv = item.split("=");
+              query[kv[0]] = kv[1];
+            });
+          if (query.v !== currentVersion) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+          if (Date.now() - +query.time > 1000) {
+            location.replace(
+              location.origin + location.pathname + "?" + getQueryStr(query)
+            );
+          }
+        }
+        const href = location.href;
+        let os = Tools.backOs();
+        if (!os.isTablet && (os.isAndroid || os.isPhone)) {
+          if (!href.includes("/mobile")) {
+            const searchVal = window.location.search;
+            const urlArr = location.href.split("?")[0].split("/");
+            urlArr.splice(urlArr.length - 1, 0, "mobile");
+            if (!urlArr[urlArr.length - 1].endsWith("index.html")) {
+              urlArr[urlArr.length - 1] = "index.html";
+            } else if (urlArr[urlArr.length - 1] === "") {
+              urlArr.pop(); // 移除空字符串
+              urlArr.push("index.html"); // 添加'index.html'
+            }
+            location.replace(urlArr.join("/") + searchVal);
+          }
+        } else {
+          if (href.includes("/mobile")) {
+            location.replace(location.href.replace("/mobile", ""));
+          }
+        }
+      })();
+      function getQueryStr(query) {
+        let newQuery = JSON.parse(JSON.stringify(query));
+        newQuery.v = "1757058432382";
+        newQuery.time = Date.now();
+        let queryStr = "";
+        for (let key in newQuery) {
+          if (!queryStr.length) {
+            queryStr = queryStr + key + "=" + newQuery[key];
+          } else {
+            queryStr = queryStr + "&" + key + "=" + newQuery[key];
+          }
+        }
+        return queryStr;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="jweb" class="page-newslist" v-cloak>
+      <div class="listbox">
+        <!-- 导航 -->
+        <!-- 顶部导航 -->
+        <transition name="custom-classes">
+          <template v-if="curPage==='gw'">
+            <div v-if="swiperIndex != lastSwpIndex" class="top_menus">
+              <div
+                class="pagin_item"
+                v-for="(item,index) in pageList"
+                @click="changeSwiper(item.idx)"
+              >
+                <img
+                  class="hudie_icon"
+                  v-show="menuIndex==index"
+                  src="../file/img/pc/hudie.png"
+                />
+                <img
+                  class="hudie_gif"
+                  v-show="menuIndex==index"
+                  src="../file/img/pc/hudie_gif.gif"
+                />
+                <p :class="menuIndex==index && 'opacity_1'">{{ item.name }}</p>
+              </div>
+              <a
+                href="javascript:;"
+                class="btn-bgm"
+                :data-status="bgmStatus?'on':'off'"
+                @click="bgmPlay"
+              >
+                <div class="lzs"></div>
+              </a>
+            </div>
+          </template>
+          <template v-else>
+            <div class="top_menus">
+              <a
+                :href="item.newslink"
+                target="_blank"
+                class="pagin_item"
+                v-for="(item,index) in pageList"
+              >
+                <img
+                  class="hudie_icon"
+                  v-show="menuIndex==index"
+                  src="../file/img/pc/hudie.png"
+                />
+                <img
+                  class="hudie_gif"
+                  v-show="menuIndex==index"
+                  src="../file/img/pc/hudie_gif.gif"
+                />
+                <p :class="menuIndex==index && 'opacity_1'">{{ item.name }}</p>
+              </a>
+              <a
+                href="javascript:;"
+                class="btn-bgm"
+                :data-status="bgmStatus?'on':'off'"
+                @click="bgmPlay"
+              >
+                <div class="lzs"></div>
+              </a>
+            </div>
+          </template>
+        </transition>
+        <audio
+          :src="bgmLink"
+          loop
+          style="display: none"
+          ref="refAudio"
+          v-if="bgmLink"
+        ></audio>
+        <a href="index.html" class="btn-back">
+          <i></i>
+          <span>返回</span>
+        </a>
+        <div class="ltit">
+          <div class="logo">
+            <img
+              class="right_logo_img"
+              src="../file/img/pc/home_logo.png"
+              alt="代号界，中式奇谭修仙游戏，带你体验东方仙诡万法世界"
+            />
+          </div>
+          <div class="line"></div>
+          <div class="txts">
+            <div class="txt">
+              <span>穿</span>
+              <span>梭</span>
+              <span>在</span>
+              <span>无</span>
+              <span>限</span>
+              <span>想</span>
+              <span>象</span>
+              <span>的</span>
+              <span>东</span>
+              <span>方</span>
+              <span>仙</span>
+              <span>诡</span>
+              <span>万</span>
+              <span>法</span>
+              <span>世</span>
+              <span>界</span>
+            </div>
+            <div class="txt">
+              <span>凡</span>
+              <span>人</span>
+              <span>、</span>
+              <span>妖</span>
+              <span>灵</span>
+              <span>、</span>
+              <span>邪</span>
+              <span>魔</span>
+              <span class="slh">……</span>
+            </div>
+          </div>
+        </div>
+        <div class="rcon">
+          <div class="list-box">
+            <div class="nav">
+              <a href="dhjList.html" class="btn">最新</a>
+              <a href="javascript:;" class="btn on">新闻</a>
+              <a href="dhjAnnList.html" class="btn">公告</a>
+            </div>
+            <div class="list">
+              <a
+                href="detail_ZZzZZKrp1956302469843783680d5db0.html"
+                class="news"
+                target="_blank"
+              >
+                <div class="img">
+                  <img
+                    src="../file-business/pc_thumbnail/ZZzZZKrp19563029713902673924ea4b.png"
+                  />
+                </div>
+                <div class="rbox">
+                  <i class="tag" data-bg="新闻">新闻</i>
+                  <div class="txt">
+                    <p>红白事一条龙？妖鬼花魁共抬棺？圆桌会路透来袭！</p>
+                    <span class="time">2025.08.15</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp19218568094135132165d7f9.html"
+                class="news"
+                target="_blank"
+              >
+                <div class="img">
+                  <img
+                    src="../file-business/pc_thumbnail/ZZzZZKrp19218587665680343042355c.jpg"
+                  />
+                </div>
+                <div class="rbox">
+                  <i class="tag" data-bg="新闻">新闻</i>
+                  <div class="txt">
+                    <p>屠龙少年终成恶龙！炼魂化形之术一般人我不告诉……</p>
+                    <span class="time">2025.05.12</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp1921167716643901440ae3fc.html"
+                class="news"
+                target="_blank"
+              >
+                <div class="img">
+                  <img
+                    src="../file-business/pc_thumbnail/ZZzZZKrp192116973478360268841e23.jpg"
+                  />
+                </div>
+                <div class="rbox">
+                  <i class="tag" data-bg="新闻">新闻</i>
+                  <div class="txt">
+                    <p>痛了，穿了，没命了，忘情了！逃进妖界秘境的我意外结丹</p>
+                    <span class="time">2025.05.10</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp191963438424850841601555.html"
+                class="news"
+                target="_blank"
+              >
+                <div class="img">
+                  <img
+                    src="../file-business/pc_thumbnail/ZZzZZKrp1919646289398730752893f3.jpg"
+                  />
+                </div>
+                <div class="rbox">
+                  <i class="tag" data-bg="新闻">新闻</i>
+                  <div class="txt">
+                    <p>战斗答疑｜风雷鼓舞，是代号界的斗法华章</p>
+                    <span class="time">2025.05.06</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="detail_ZZzZZKrp1919647828842516480d8114.html"
+                class="news"
+                target="_blank"
+              >
+                <div class="img">
+                  <img
+                    src="../file-business/pc_thumbnail/ZZzZZKrp1919652183570255872aa7c8.jpg"
+                  />
+                </div>
+                <div class="rbox">
+                  <i class="tag" data-bg="新闻">新闻</i>
+                  <div class="txt">
+                    <p>怪美的！角色设计大公开：披毛带角亦可修仙！</p>
+                    <span class="time">2025.04.14</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="pager-box">
+              <a class="btn-page page-prev">上一页</a>
+              <a href="dhjNewsList.html" class="btn-num cur" data-num="1">1</a>
+              <a href="dhjNewsList_2.html" class="btn-num" data-num="2">2</a>
+              <a href="dhjNewsList_2.html" class="btn-page page-prev">下一页</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer">
+          <img
+            class="footer_logo"
+            src="../file/img/pc/home_logo.png"
+            alt="代号界，中式奇谭修仙游戏，带你体验东方仙诡万法世界"
+          />
+          <div class="footer_info">
+            <p class="footer_text footer_text_tip">
+              <a href="https://www.worldqi.com"> 代号界 </a>
+            </p>
+            <p class="footer_text footer_text_tip">
+              代号界作为一款东方仙诡游戏，将在这场落笔于晚唐乱世的故事中，带你开启一场最为奇幻的玄妙冒险。<br />本站是代号界游戏官网，游戏下载及游戏预约请认准官方渠道。
+            </p>
+            <div class="footer_url">
+              <a
+                href="https://www.worldqi.com/privacy_user_clause.html"
+                target="_blank"
+              >
+                用户协议
+              </a>
+              |
+              <a
+                href="https://www.worldqi.com/privacy_member_role.html"
+                target="_blank"
+                >隐私政策
+              </a>
+              |
+              <a
+                href="https://www.worldqi.com/privacy_chilrd_member_role.html"
+                target="_blank"
+              >
+                儿童个人信息保护政策
+              </a>
+              |
+              <a
+                href="https://www.worldqi.com/privacy_service_agreement.html"
+                target="_blank"
+                >个人信息收集清单
+              </a>
+              |
+              <a
+                href="https://www.worldqi.com/privacy_info_share.html"
+                target="_blank"
+                >第三方SDK类服务商目录
+              </a>
+              |
+              <a
+                href="https://www.worldqi.com/privacy_anti_addiction.html"
+                target="_blank"
+                >网络游戏行业防沉迷自律公约
+              </a>
+            </div>
+            <p class="footer_text">
+              健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+            </p>
+            <p class="footer_text">
+              <a href="https://beian.miit.gov.cn" target="_blank">
+                沪ICP备2024104032号-2
+              </a>
+            </p>
+            <div class="flex flex-center">
+              <img
+                style="width: 0.2rem; margin-right: 0.1rem"
+                src="../file/img/pc/police_icon.png"
+                alt
+              />
+              <p class="footer_text">
+                <a
+                  href="https://beian.mps.gov.cn/#/query/webSearch?code=31010402334723"
+                  rel="noreferrer"
+                  target="_blank"
+                  >沪公网安备31010402334723号</a
+                >
+              </p>
+            </div>
+            <p class="footer_text xiaoWrite">
+              联系地址：上海市徐汇区苍梧路12号5层506室 丨
+              联系方式：worldqii@163.com
+            </p>
+            <p class="footer_text">
+              Copyright © 2024 | 上海拾异信息科技有限责任公司. All Rights
+              Reserved
+            </p>
+          </div>
+        </div>
+      </footer>
+      <transition
+        name="custom-classes"
+        enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut"
+      >
+        <div class="tipPopup" v-if="showTips">
+          <p>{{ tips }}</p>
+        </div>
+      </transition>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="../file/js/app/jquery1.11.0.js"
+    ></script>
+    <script type="text/javascript" src="../file/js/lib/vue.min.js"></script>
+    <script src="../file/js/app/data.js?v=1757058432382"></script>
+    <script src="../file/js/app/news-pc.js?v=1757058432382"></script>
+  </body>
+</html>
